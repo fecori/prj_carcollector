@@ -99,6 +99,8 @@ En `ApiClient.kt` la base está en:
 - `http://10.0.2.2:8000/backend/api`
 
 Si usas otro host/puerto, cámbialo allí.
+
+> Nota: la app Android ya no consulta `t-hunted.blogspot.com` directamente; ahora consume únicamente los datos del backend/MySQL por `lotes.php`.
 Con eso se crea automáticamente el esquema desde `db/schema.sql`.
 
 ## Requisitos

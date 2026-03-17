@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carcollector.databinding.ActivityMainBinding
 import com.carcollector.model.LotItem
+import com.carcollector.network.ApiClient
 import com.carcollector.session.SessionManager
 import com.carcollector.ui.LotAdapter
 import kotlinx.coroutines.Dispatchers
@@ -71,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             runCatching {
                 withContext(Dispatchers.IO) {
+                    ApiClient.getLotes()
                     val baseUrl = "https://t-hunted.blogspot.com"
                     val doc = Jsoup.connect("$baseUrl/p/lotes-hot-wheels.html")
                         .userAgent("Mozilla/5.0")
