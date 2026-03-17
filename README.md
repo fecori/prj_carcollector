@@ -52,6 +52,7 @@ Con eso se crea automáticamente el esquema desde `db/schema.sql`.
 - SDK de Android 34.
 
 ## Ejecutar app Android
+## Ejecutar
 
 1. Abre la carpeta en Android Studio.
 2. Sincroniza Gradle.
