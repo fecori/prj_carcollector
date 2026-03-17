@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Car Collector HW</string>
+    <string name="title_lots">Hot Wheels - Lotes</string>
+    <string name="hint_search">Buscar lote</string>
+    <string name="title_detail">Detalle del lote</string>
+    <string name="msg_empty">No se encontraron lotes con ese filtro.</string>
+    <string name="msg_error">No se pudieron cargar los lotes.</string>
+</resources>
