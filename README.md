@@ -101,6 +101,12 @@ En `ApiClient.kt` la base está en:
 Si usas otro host/puerto, cámbialo allí.
 
 > Nota: la app Android ya no consulta `t-hunted.blogspot.com` directamente; ahora consume únicamente los datos del backend/MySQL por `lotes.php`.
+
+## Backend alterno con Next.js + Sequelize + mysql2
+
+Se agregó un backend nuevo en `backend-next/` sin borrar el backend PHP.
+
+Revisa `backend-next/README.md` para instalación, endpoints y scraping.
 Con eso se crea automáticamente el esquema desde `db/schema.sql`.
 
 ## Requisitos
