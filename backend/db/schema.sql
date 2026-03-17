@@ -49,6 +49,8 @@ CREATE TABLE IF NOT EXISTS auto_imagenes (
     CONSTRAINT fk_auto_imagenes_auto
         FOREIGN KEY (auto_id) REFERENCES autos(id)
         ON DELETE CASCADE ON UPDATE CASCADE
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS coleccion_usuario (
@@ -65,6 +67,11 @@ CREATE TABLE IF NOT EXISTS coleccion_usuario (
         FOREIGN KEY (auto_id) REFERENCES autos(id)
         ON DELETE CASCADE ON UPDATE CASCADE,
     UNIQUE KEY uq_usuario_auto (usuario_id, auto_id)
+    CONSTRAINT fk_coleccion_auto
+        FOREIGN KEY (auto_id) REFERENCES autos(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    UNIQUE KEY uq_coleccion_auto (auto_id)
 );
 
 CREATE INDEX idx_autos_lote_id ON autos(lote_id);

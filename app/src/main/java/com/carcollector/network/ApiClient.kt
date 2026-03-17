@@ -77,6 +77,7 @@ object ApiClient {
 
         val code = conn.responseCode
         val stream = if (code in 200..299) conn.inputStream else conn.errorStream
+
         val body = BufferedReader(stream.reader()).use { it.readText() }
         return Pair(code in 200..299, body)
     }
