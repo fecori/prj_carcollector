@@ -16,6 +16,7 @@ try {
             ORDER BY l.nombre ASC";
 
     $stmt = $pdo->query($sql);
+    $stmt = $pdo->query('SELECT id, nombre, url, creado_en FROM lotes ORDER BY nombre ASC');
 
     echo json_encode([
         'ok' => true,
