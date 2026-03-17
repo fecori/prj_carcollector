@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carcollector.databinding.ActivityMainBinding
 import com.carcollector.model.LotItem
+import com.carcollector.session.SessionManager
 import com.carcollector.ui.LotAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,11 +20,33 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: LotAdapter
+    private lateinit var session: SessionManager
 
     private var allLots: List<LotItem> = emptyList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        session = SessionManager(this)
+        if (session.getToken() == null) {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            return
+        }
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.topBar.setOnMenuItemClickListener {
+            if (it.itemId == R.id.action_logout) {
+                session.clear()
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+                true
+            } else {
+                false
+            }
+        }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

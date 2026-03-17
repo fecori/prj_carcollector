@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:backgroundTint="?attr/colorPrimary"
         android:title="@string/title_lots"
+        android:titleTextColor="@android:color/white"
+        app:menu="@menu/main_menu" />
         android:titleTextColor="@android:color/white" />
 
     <com.google.android.material.textfield.TextInputLayout
